@@ -1,0 +1,31 @@
+<div class="main-left">
+  <h2 class="user-info">User info</h2>
+  <div class="img">
+    <%= attachment_image_tag user, :image, fallback: "default.png", size: "60x60"%>
+  </div>
+  <table class="table table">
+    <tr>
+      <th><strong>name</strong></th>
+      <td><strong><%= user.name %></strong></td>
+    </tr>
+    <tr>
+      <th><strong>introduction</strong></th>
+      <td><strong><%= user.introduction %></strong></td>
+    </tr>
+  </table>
+
+  <div class="users-show">
+    <%= link_to 'mypage', edit_user_path(user.id),class: "btn mypage btn-outline-secondary"  %>
+  </div>
+</div>
+
+<div>
+  <h2 class="new_book">New book</h2>
+  <%= form_with model: book, local:true do |f| %>
+    <p>Title</p>
+    <%= f.text_field :book_title,class:'text_field' %>
+    <p class="opinion">Opinion</p>
+    <%= f.text_area :opinion,class:'text_area' %>
+    <p><%= f.submit 'Create Book',class:'btn create_book btn-success btn-sm' %></p>
+  <% end %>
+</div>

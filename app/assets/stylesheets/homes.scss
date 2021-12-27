@@ -1,0 +1,62 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  width: 515px;
+  margin: 10px auto;
+}
+
+.main-content {
+  text-align: center;
+  margin-left: 20px;
+}
+
+
+.login {
+  width: 450px;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 4px;
+  line-height: 30px;
+  display: block;
+}
+
+.login:hover {
+  text-decoration: none;
+  color: white;
+  filter: brightness(90%);
+}
+
+.signup {
+  width: 450px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  line-height: 30px;
+  display: block;
+}
+
+.signup:hover {
+  text-decoration: none;
+  color: white;
+  filter: brightness(90%);
+}
+
+.main-bottom{
+  margin-top: 20px;
+}
+
+.about {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-main {
+  margin-top: 30px;
+}
+
+.about-bottom {
+  margin-top: 30px;
+}

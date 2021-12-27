@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+                            // application.html.erb
+.header {
+  background-color: #343a40;
+  width: 100%;
+  height: 55px;
+}
+
+
+.header-left {
+  float: left;
+  line-height: 55px;
+  margin-left: 155px;
+  font-size: 20px;
+}
+
+.header-right {
+  float: right;
+  font-size: 20px;
+  line-height: 55px;
+  margin-right: 155px;
+}
+
+.header-right li {
+  float: right;
+  margin-right: 20px;
+}
+
+.header-li{
+  color: white;
+}
+
+.header-li:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.bookers{
+  color: white;
+}
+
+.bookers:hover {
+  color: white;
+  text-decoration: none;
+}
+
+                                // sessions/new.html.erb
+
+.new {
+  margin-left: 120px;
+  margin-top: 20px;
+}
+
+.copy {
+  width: 200px;
+  margin: 0 auto;
+  text-align: cetner;
+}
+
+.btn-login {
+  margin-top: 10px;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 4px;
+  line-height: 30px;
+}
+
+.btn-signup {
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  line-height: 30px;
+}
+
+.flash{
+  color: green;
+}

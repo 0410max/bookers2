@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <%= render 'users/list', book: @book,user: @user %>
+    </div>
+
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-8">
+      <h2 class="users">Users</h2>
+      <table class="table table">
+        <thead>
+          <th>image</th>
+          <th>name</th>
+          <th></th>
+        </thead>
+        <% @users.each do |user| %>
+          <tbody>
+            <td><%= attachment_image_tag user, :image, fallback: "default.png", size: "30x30"%></td>
+            <td><%= user.name %></td>
+            <td><%= link_to 'show',user_path(user.id) %></td>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+
+  </div>
+</div>
+<p class="main-bottom" style="text-align: center;" >CopyRight Infratop.inc</p>

@@ -1,0 +1,30 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.user_info {
+  margin-top: 10px;
+  width: 100px;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 20px;
+}
+
+th,td{
+  padding-right: 30px;
+}
+
+.users{
+  margin-top: 20px;
+}
+
+.books {
+  padding-top: 20px;
+}

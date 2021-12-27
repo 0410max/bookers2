@@ -1,0 +1,65 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-info {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.users-show {
+    text-align: center;
+}
+
+.icon {
+    width: 30%;
+}
+
+.copy {
+    text-align: center;
+    padding-top: 20px;
+}
+
+td {
+    padding-right: 10px;
+}
+
+.books {
+    padding-top: 20px;
+}
+
+.mypage {
+    width: 100%;
+    border: 2px solid gray;
+    line-height: 25px;
+}
+.new_book {
+    margin-top: 20px;
+}
+.opinion {
+    margin-top: 20px;
+}
+
+.text_field {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 35px;
+    width: 250px;
+}
+
+.text_area {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 50px;
+    width: 250px;
+}
+
+.create_book {
+    margin-top: 20px;
+    line-height: 30px;
+    width: 100px;
+}
+
+.book_detail {
+    padding-top: 20px;
+}
+
