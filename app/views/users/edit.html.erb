@@ -1,24 +1,28 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <% if @user.errors.any? %>
+        <div class="error">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this book from being saved:</h2>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </div>
+      <% end %>
 
-        </div>
-        <div class="col-lg-6">
-          <div class="user-info">
-            <h2>User info</h2>
-            <%= form_with model:@user,local:true do |f| %>
-                <p>Name</p>
-                <%= f.text_field :name %>
-                <p>Image</p>
-                <%= f.attachment_field :image %>
-                <p>Introduction</p>
-                <%= f.text_area :introduction %>
-                <p><%= f.submit 'Update User' %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-lg-3">
-        </div>
+      <div class="user-info">
+        <h2>User info</h2>
+        <%= form_with model:@user,local:true do |f| %>
+            <p class="name">Name</p>
+            <p><%= f.text_field :name,class:'name-input' %></p>
+            <p class="image">Image</p>
+            <p class="image-input"><%= f.attachment_field :profile_image %></p>
+            <p class="introduction">Introduction</p>
+            <p><%= f.text_area :introduction,class:'introduction-input' %></p>
+            <p class="submit"><%= f.submit 'Update User',class:'btn btn-secondary' %></p>
+        <% end %>
+      </div>
+      <p class="main-bottom" style="text-align: center;" >CopyRight Infratop.inc</p>
     </div>
+  </div>
 </div>
-<p class="main-bottom" style="text-align: center;" >CopyRight Infratop.inc</p>

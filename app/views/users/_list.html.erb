@@ -1,7 +1,7 @@
 <div class="main-left">
   <h2 class="user-info">User info</h2>
   <div class="img">
-    <%= attachment_image_tag user, :image, fallback: "default.png", size: "60x60"%>
+    <%= attachment_image_tag user, :profile_image, fallback: "no_img.png", size: "60x60"%>
   </div>
   <table class="table table">
     <tr>
@@ -15,7 +15,9 @@
   </table>
 
   <div class="users-show">
-    <%= link_to 'mypage', edit_user_path(user.id),class: "btn mypage btn-outline-secondary"  %>
+    <%= link_to  edit_user_path(user.id),class: "btn mypage btn-outline-secondary" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
   </div>
 </div>
 
@@ -23,9 +25,9 @@
   <h2 class="new_book">New book</h2>
   <%= form_with model: book, local:true do |f| %>
     <p>Title</p>
-    <%= f.text_field :book_title,class:'text_field' %>
+    <%= f.text_field :title,class:'text_field' %>
     <p class="opinion">Opinion</p>
-    <%= f.text_area :opinion,class:'text_area' %>
+    <%= f.text_area :body,class:'text_area' %>
     <p><%= f.submit 'Create Book',class:'btn create_book btn-success btn-sm' %></p>
   <% end %>
 </div>

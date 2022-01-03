@@ -9,12 +9,11 @@
 
 .user_info {
   margin-top: 10px;
-  width: 100px;
 }
 
 .copy {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 th,td{
@@ -26,5 +25,42 @@ th,td{
 }
 
 .books {
-  padding-top: 20px;
+  top: 20px;
 }
+
+.error li {
+  color: red;
+}
+
+.user-info {
+  border-radius: 4px;
+  display: block;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.name-input {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  height: 35px;
+  width: 500px;
+}
+
+.image {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.introduction {
+  margin-bottom: 5px;
+}
+
+.introduction-input {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  height: 70px;
+  width: 500px;
+}
+

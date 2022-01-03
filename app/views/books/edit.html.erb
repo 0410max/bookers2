@@ -1,23 +1,29 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-3"></div>
 
-        <div class="col-lg-6">
+        <div class="col-mg-6 offset-md-3">
+            <% if @book.errors.any? %>
+              <div class="error">
+                <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+                <% @book.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </div>
+            <% end %>
+
             <div class="user-info">
-                <h2 class="editing">Editing Book</h2>
+                <h1 class="editing">Editing Book</h1>
                 <p>Title</p>
                 <%= form_with model:@book,local:true do |f| %>
-                    <%= f.text_field :book_title,class:'text_field' %>
+                    <%= f.text_field :title,class:'text_field-edit' %>
                     <p class="opinion">Opinion</p>
-                    <%= f.text_area :opinion,class:'text_area' %>
+                    <%= f.text_area :body,class:'text_area-edit' %>
                     <p><%= f.submit 'Update Book',class:'btn create_book btn-success btn-sm' %></p>
                 <% end %>
                 <%= link_to 'Show',book_path(@book.id) %> | <%= link_to 'Back',books_path %>
             </div>
+            <p class="main-bottom" style="text-align: center;" >CopyRight Infratop.inc</p>
         </div>
-
-        <div class="col-lg-3"></div>
     </div>
 </div>
-<p class="main-bottom" style="text-align: center;" >CopyRight Infratop.inc</p>
 

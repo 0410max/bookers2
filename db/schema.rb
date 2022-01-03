@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_26_093400) do
+ActiveRecord::Schema.define(version: 2022_01_02_022141) do
 
   create_table "books", force: :cascade do |t|
     t.text "book_title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_12_26_093400) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "body"
   end
 
   create_table "images", force: :cascade do |t|
@@ -36,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_12_26_093400) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "images"
     t.text "image"
     t.text "introduction"
     t.string "image_id"
+    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,48 +5,77 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+　　<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/6c084a2929.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="header">
-      <div class="header-left">
-        <li>
-          <%= link_to "Bookers", root_path,class:'bookers' %>
-        </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <%= link_to "Bookers", root_path,class:'navbar-brand header-left' %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <% if user_signed_in? %>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-right">
+              <li class="nav-item">
+                <%= link_to  user_path(current_user.id),class:'nav-link active' do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  users_path,class:'nav-link active' do %>
+                  <i class="fas fa-users"></i> Users
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  books_path,class:'nav-link active' do %>
+                  <i class="fas fa-book-open"></i> Books
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  destroy_user_session_path,class:'nav-link active', method: :delete do %>
+                  <i class="fas fa-sign-out-alt"></i> Log out
+                <% end %>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-right">
+              <li class="nav-item">
+                <%= link_to  root_path,class:'nav-link active' do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  home_path,class:'nav-link active' do %>
+                  <i class="fas fa-link"></i> About
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_registration_path,class:'nav-link active' do %>
+                  <i class="fas fa-user-plus"></i> Sign up
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_session_path,class:'nav-link active' do %>
+                  <i class="fas fa-sign-in-alt"></i> Log in
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
       </div>
-      <div class="header-right">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to "Log out", destroy_user_session_path,class:'header-li', method: :delete %>
-          </li>
-          <li>
-            <%= link_to "Books", books_path,class:'header-li' %>
-          </li>
-          <li>
-            <%= link_to "Users", users_path,class:'header-li' %>
-          </li>
-          <li>
-            <%= link_to "Home", user_path(current_user.id),class:'header-li' %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Log in", new_user_session_path,class:'header-li' %>
-          </li>
-          <li>
-            <%= link_to "Sign up", new_user_registration_path,class:'header-li' %>
-          </li>
-          <li>
-            <%= link_to "About", about_path,class:'header-li' %>
-          </li>
-          <li>
-            <%= link_to "Home", root_path,class:'header-li' %>
-          </li>
-        <% end %>
-      </div>
-    </div>
-    <p class="flash"><%= flash[:notice] %></p>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <% if flash[:notice] %>
+      <p class="flash"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
+

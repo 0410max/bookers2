@@ -44,13 +44,15 @@ td {
     border-radius: 4px;
     height: 35px;
     width: 250px;
+    padding: 3px;
 }
 
 .text_area {
     border: 1px solid #ced4da;
     border-radius: 4px;
-    height: 50px;
+    height: 70px;
     width: 250px;
+    padding: 3px;
 }
 
 .create_book {
@@ -61,5 +63,28 @@ td {
 
 .book_detail {
     padding-top: 20px;
+}
+
+.error {
+   color: red;
+}
+
+#editing {
+    text-align: center;
+}
+.text_field-edit {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 35px;
+    width: 500px;
+    padding: 3px;
+}
+
+.text_area-edit {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 70px;
+    width: 500px;
+    padding: 3px;
 }
 

@@ -1,18 +1,19 @@
 <% if @book.errors.any? %>
   <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
   <% @book.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+    <div class="error">
+      <li><%= message %></li>
+    </div>
   <% end %>
 <% end %>
+
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <%= render 'users/list', book: @book,user: @user %>
     </div>
 
-    <div class="col-lg-1"></div>
-
-    <div class="col-lg-8">
+    <div class="col-md-8 offset-md-1">
         <h2 class="books">Books</h2>
         <table class="table table-hover">
           <thead>
@@ -22,9 +23,9 @@
           </thead>
           <% @books.each do |book| %>
             <tbody>
-              <td><%= attachment_image_tag @user, :image, fallback: "default.png", size: "30x30"%></td>
-              <td><%= link_to book.book_title, book_path(book.id) %></td>
-              <td><%= book.opinion %></td>
+              <td><%= attachment_image_tag @user, :profile_image, fallback: "default.png", size: "30x30"%></td>
+              <td><%= link_to book.title, book_path(book.id) %></td>
+              <td><%= book.body %></td>
             </tbody>
           <% end %>
         </table>
